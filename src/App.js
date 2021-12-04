@@ -34,6 +34,9 @@ function App() {
       },
       secondary: {
         main: blue[800]
+      },
+      sidebar: {
+        text: "white"
       }
     },
     typography: {
@@ -46,7 +49,7 @@ function App() {
       <CssBaseline />
       <div>
         <TopNavContainer />
-        <SideNavContainer />
+        <SideNavContainer variant="permanent" />
         <CardHolderContainer />
       </div>
     </ThemeProvider>

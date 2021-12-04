@@ -11,7 +11,8 @@ import {
   ListItemButton,
   ListItemText,
   ListItemIcon,
-  IconButton
+  IconButton,
+  TextField
 } from "@mui/material";
 
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -32,13 +33,16 @@ function TopNav({
     <AppBar
       position="sticky"
       sx={{
-        display: { xs: "block", sm: "none" },
+        // display: { xs: "block", sm: "none" },
+        marginLeft: { xs: "0", sm: `${drawerWidth}px` },
+        width: { xs: "100%", sm: `calc(100% - ${drawerWidth}px)` },
         color: "white"
       }}
     >
       <Box
         sx={{
           display: "flex",
+          height: "4rem",
           justifyContent: "space-between",
           alignItems: "center"
         }}
@@ -49,16 +53,32 @@ function TopNav({
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 0.75, display: { sm: "none" } }}
+            sx={{ mr: 0.75 }}
             onClick={onDrawerOpen}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" sx={{ fontWeight: 400, mr: 0.7 }}>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: 400,
+              mr: 0.7,
+              display: { xs: "block", sm: "none" }
+            }}
+          >
             오늘의
           </Typography>
-          <Typography variant="h6" sx={{ fontWeight: 600 }}>
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: 600, display: { xs: "block", sm: "none" } }}
+          >
             원신
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: 600, display: { xs: "none", sm: "block" } }}
+          >
+            홈
           </Typography>
         </Toolbar>
         <Chip
@@ -89,7 +109,9 @@ function TopNav({
             py: 6,
             display: "flex",
             flexDirection: "column",
-            alignItems: "center"
+            alignItems: "center",
+            backgroundColor: "primary.main",
+            color: "sidebar.text"
           }}
         >
           <Typography sx={{ fontSize: "1.75rem", fontWeight: 300 }}>
@@ -107,6 +129,9 @@ function TopNav({
         </Box>
         <Divider />
         <List>
+          <ListItem>
+            <TextField label="검색" variant="outlined" size="small" />
+          </ListItem>
           <ListItem disablePadding>
             <ListItemButton
               selected={selMenuIndex === 0}

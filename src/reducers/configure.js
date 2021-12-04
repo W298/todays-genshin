@@ -5,7 +5,7 @@
 // Initial Value
 
 const initialValue = {
-  drawerWidth: 200,
+  drawerWidth: 250,
   categoryDB: ["무기 돌파 재료", "특성 책"]
 };
 

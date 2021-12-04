@@ -7,17 +7,20 @@ import {
   ListItem,
   ListItemButton,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  TextField,
+  Avatar
 } from "@mui/material";
 
 import HomeIcon from "@mui/icons-material/Home";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-function SideNav({ drawerWidth }) {
+function SideNav({ drawerWidth, variant }) {
   return (
     <Drawer
       id="permanet-drawer"
-      variant="permanent"
+      // variant="permanent"
+      variant={variant}
       anchor="left"
       sx={{
         display: { xs: "none", sm: "block" },
@@ -35,7 +38,9 @@ function SideNav({ drawerWidth }) {
           py: 6,
           display: "flex",
           flexDirection: "column",
-          alignItems: "center"
+          alignItems: "center",
+          backgroundColor: "primary.main",
+          color: "sidebar.text"
         }}
       >
         <Typography sx={{ fontSize: "1.75rem", fontWeight: 300 }}>
@@ -53,6 +58,9 @@ function SideNav({ drawerWidth }) {
       </Box>
       <Divider />
       <List>
+        <ListItem>
+          <TextField label="검색" variant="outlined" size="small" />
+        </ListItem>
         <ListItem disablePadding>
           <ListItemButton
           // selected={selectedListItemIndex === 0}
