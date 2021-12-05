@@ -4,21 +4,13 @@ import {
   Toolbar,
   Typography,
   Chip,
-  Drawer,
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  ListItemIcon,
-  IconButton,
-  TextField
+  IconButton
 } from "@mui/material";
 
-import SettingsIcon from "@mui/icons-material/Settings";
-import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
 import TodayIcon from "@mui/icons-material/Today";
+
+import SideNav from "./SideNav";
 
 function TopNav({
   drawerWidth,
@@ -33,7 +25,6 @@ function TopNav({
     <AppBar
       position="sticky"
       sx={{
-        // display: { xs: "block", sm: "none" },
         marginLeft: { xs: "0", sm: `${drawerWidth}px` },
         width: { xs: "100%", sm: `calc(100% - ${drawerWidth}px)` },
         color: "white"
@@ -88,78 +79,14 @@ function TopNav({
           sx={{ mr: 1, lineHeight: "1rem" }}
         />
       </Box>
-      <Drawer
-        variant="temporary"
-        anchor="left"
-        open={drawerOpen}
-        onClose={onDrawerClose}
-        sx={{
-          display: { xs: "block", sm: "none" },
-          "& .MuiDrawer-paper": {
-            boxSizing: "border-box",
-            width: drawerWidth
-          }
-        }}
-        PaperProps={{
-          elevation: 1
-        }}
-      >
-        <Box
-          sx={{
-            py: 6,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            backgroundColor: "primary.main",
-            color: "sidebar.text"
-          }}
-        >
-          <Typography sx={{ fontSize: "1.75rem", fontWeight: 300 }}>
-            오늘의
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "2.75rem",
-              fontWeight: 600,
-              lineHeight: "2.5rem"
-            }}
-          >
-            원신
-          </Typography>
-        </Box>
-        <Divider />
-        <List>
-          <ListItem>
-            <TextField label="검색" variant="outlined" size="small" />
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton
-              selected={selMenuIndex === 0}
-              onClick={() => {
-                onListItemClick(0);
-              }}
-            >
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              <ListItemText primary="홈" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton
-              selected={selMenuIndex === 1}
-              onClick={() => {
-                onListItemClick(1);
-              }}
-            >
-              <ListItemIcon>
-                <SettingsIcon />
-              </ListItemIcon>
-              <ListItemText primary="설정" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </Drawer>
+      <SideNav 
+        drawerWidth={drawerWidth} 
+        variant="temporary" 
+        drawerOpen={drawerOpen}
+        onDrawerClose={onDrawerClose}
+        onListItemClick={onListItemClick}
+        selMenuIndex={selMenuIndex}
+      />
     </AppBar>
   );
 }

@@ -12,18 +12,20 @@ import {
   Avatar
 } from "@mui/material";
 
+import logo from "../imgs/logo.png";
+
 import HomeIcon from "@mui/icons-material/Home";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-function SideNav({ drawerWidth, variant }) {
+function SideNav({ drawerWidth, variant, drawerOpen, onDrawerClose, selMenuIndex, onListItemClick }) {
   return (
     <Drawer
-      id="permanet-drawer"
-      // variant="permanent"
       variant={variant}
       anchor="left"
+      open={drawerOpen}
+      onClose={onDrawerClose}
       sx={{
-        display: { xs: "none", sm: "block" },
+        display: { xs: (variant === "permanent") ? "none" : "block", sm: "block" },
         "& .MuiDrawer-paper": {
           boxSizing: "border-box",
           width: drawerWidth
@@ -43,6 +45,7 @@ function SideNav({ drawerWidth, variant }) {
           color: "sidebar.text"
         }}
       >
+        <Avatar src={logo} sx={{ width: "7rem", height: "7rem", mb: 1, border: "2px white solid" }}/>
         <Typography sx={{ fontSize: "1.75rem", fontWeight: 300 }}>
           오늘의
         </Typography>
@@ -63,10 +66,10 @@ function SideNav({ drawerWidth, variant }) {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
-          // selected={selectedListItemIndex === 0}
-          // onClick={() => {
-          //   onListItemClick(0);
-          // }}
+            selected={selMenuIndex === 0}
+            onClick={() => {
+              onListItemClick(0);
+            }}
           >
             <ListItemIcon>
               <HomeIcon />
@@ -76,10 +79,10 @@ function SideNav({ drawerWidth, variant }) {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
-          // selected={selectedListItemIndex === 1}
-          // onClick={() => {
-          //   onListItemClick(1);
-          // }}
+            selected={selMenuIndex === 1}
+            onClick={() => {
+              onListItemClick(1);
+            }}
           >
             <ListItemIcon>
               <SettingsIcon />

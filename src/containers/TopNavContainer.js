@@ -1,15 +1,18 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { openDrawer, closeDrawer, setMenuIndex } from "../reducers/configure";
 
 import TopNav from "../components/TopNav";
 
 export default function TopNavContainer() {
-  const { drawerWidth } = useSelector((state) => ({
-    drawerWidth: state.configure.drawerWidth
+  const { drawerWidth, drawerOpen, selMenuIndex } = useSelector((state) => ({
+    drawerWidth: state.configure.drawerWidth,
+    drawerOpen: state.configure.drawerOpen,
+    selMenuIndex: state.configure.selMenuIndex
   }));
 
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [selMenuIndex, setSelMenuIndex] = useState(0);
+  const dispatch = useDispatch();
 
   const krDay = ["일", "월", "화", "수", "목", "금", "토"];
 
@@ -20,14 +23,14 @@ export default function TopNavContainer() {
       selMenuIndex={selMenuIndex}
       krDay={krDay}
       onDrawerOpen={() => {
-        setDrawerOpen(true);
+        dispatch(openDrawer());
       }}
       onDrawerClose={() => {
-        setDrawerOpen(false);
+        dispatch(closeDrawer());
       }}
       onListItemClick={(index) => {
-        setSelMenuIndex(index);
-        setDrawerOpen(false);
+        dispatch(setMenuIndex(index));
+        dispatch(closeDrawer());
       }}
     />
   );
