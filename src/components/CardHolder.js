@@ -14,7 +14,8 @@ export default function CardHolder({
     <Box
       sx={{
         width: { sm: `calc(100% - ${drawerWidth}px)` },
-        ml: { sm: `${drawerWidth}px` }
+        ml: { sm: `${drawerWidth}px` },
+        transition: "0.2s ease-in-out"
       }}
     >
       <Stack direction="row" sx={{ my: 1, mx: 1 }} spacing={1}>

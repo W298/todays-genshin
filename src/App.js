@@ -49,7 +49,7 @@ function App() {
       <CssBaseline />
       <div>
         <TopNavContainer />
-        <SideNavContainer variant="permanent" />
+        <SideNavContainer />
         <CardHolderContainer />
       </div>
     </ThemeProvider>

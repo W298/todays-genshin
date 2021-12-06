@@ -1,16 +1,26 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { openDrawer, closeDrawer, setMenuIndex } from "../reducers/configure";
+import {
+  openDrawer,
+  closeDrawer,
+  setMenuIndex,
+  openSidebar,
+  closeSidebar,
+  setDrawerWidth,
+} from "../reducers/configure";
 
 import TopNav from "../components/TopNav";
 
 export default function TopNavContainer() {
-  const { drawerWidth, drawerOpen, selMenuIndex } = useSelector((state) => ({
-    drawerWidth: state.configure.drawerWidth,
-    drawerOpen: state.configure.drawerOpen,
-    selMenuIndex: state.configure.selMenuIndex
-  }));
+  const { drawerWidth, drawerOpen, sidebarOpen, selMenuIndex } = useSelector(
+    (state) => ({
+      drawerWidth: state.configure.drawerWidth,
+      drawerOpen: state.configure.drawerOpen,
+      sidebarOpen: state.configure.sidebarOpen,
+      selMenuIndex: state.configure.selMenuIndex,
+    })
+  );
 
   const dispatch = useDispatch();
 
@@ -27,6 +37,19 @@ export default function TopNavContainer() {
       }}
       onDrawerClose={() => {
         dispatch(closeDrawer());
+      }}
+      onSidebarToggle={() => {
+        if (!sidebarOpen) {
+          dispatch(setDrawerWidth(250));
+          setTimeout(() => {
+            dispatch(openSidebar());
+          }, 200);
+        } else {
+          dispatch(closeSidebar());
+          setTimeout(() => {
+            dispatch(setDrawerWidth(0));
+          }, 200);
+        }
       }}
       onListItemClick={(index) => {
         dispatch(setMenuIndex(index));
