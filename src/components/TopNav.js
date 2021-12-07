@@ -29,7 +29,7 @@ function TopNav({
         marginLeft: { xs: "0", sm: `${drawerWidth}px` },
         width: { xs: "100%", sm: `calc(100% - ${drawerWidth}px)` },
         color: "white",
-        transition: "0.2s ease-in-out"
+        transition: "225ms cubic-bezier(0, 0, 0.2, 1) 0ms"
       }}
     >
       <Box

@@ -40,12 +40,14 @@ function SideNav({
         },
         "& .MuiDrawer-paper": {
           boxSizing: "border-box",
-          width: drawerWidth,
-          transition: "0.2s ease-in-out"
+          width: 250
         },
       }}
       PaperProps={{
-        elevation: 1,
+        elevation: 4,
+        sx: {
+          border: "none"
+        }
       }}
     >
       <Box

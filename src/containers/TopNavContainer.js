@@ -40,15 +40,11 @@ export default function TopNavContainer() {
       }}
       onSidebarToggle={() => {
         if (!sidebarOpen) {
+          dispatch(openSidebar());
           dispatch(setDrawerWidth(250));
-          setTimeout(() => {
-            dispatch(openSidebar());
-          }, 200);
         } else {
           dispatch(closeSidebar());
-          setTimeout(() => {
-            dispatch(setDrawerWidth(0));
-          }, 200);
+          dispatch(setDrawerWidth(0));
         }
       }}
       onListItemClick={(index) => {
