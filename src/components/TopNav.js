@@ -13,7 +13,7 @@ import TodayIcon from "@mui/icons-material/Today";
 import SideNav from "./SideNav";
 
 function TopNav({
-  drawerWidth,
+  cardHolderMinusWidth,
   drawerOpen,
   selMenuIndex,
   krDay,
@@ -26,8 +26,8 @@ function TopNav({
     <AppBar
       position='sticky'
       sx={{
-        marginLeft: { xs: "0", sm: `${drawerWidth}px` },
-        width: { xs: "100%", sm: `calc(100% - ${drawerWidth}px)` },
+        marginLeft: { xs: "0", sm: `${cardHolderMinusWidth}px` },
+        width: { xs: "100%", sm: `calc(100% - ${cardHolderMinusWidth}px)` },
         color: "white",
         transition: "225ms cubic-bezier(0, 0, 0.2, 1) 0ms"
       }}
@@ -93,7 +93,7 @@ function TopNav({
       </Box>
       <SideNav
         variant='temporary'
-        drawerWidth={drawerWidth}
+        cardHolderMinusWidth={cardHolderMinusWidth}
         drawerOpen={drawerOpen}
         selMenuIndex={selMenuIndex}
         onDrawerClose={onDrawerClose}

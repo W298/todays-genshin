@@ -1,6 +1,6 @@
 // Action Types
 
-const SETDRAWERW = "configure/SETDRAWERW";
+const SETCARDHOLDERMINUSW = "configure/SETCARDHOLDERMINUSW";
 const OPENDRAWER = "configure/OPENDRAWER";
 const CLOSEDRAWER = "configure/CLOSEDRAWER";
 const OPENSIDEBAR = "configure/OPENSIDEBAR";
@@ -10,8 +10,8 @@ const SETMENUINDEX = "configure/SETMENUINDEX";
 
 // Action Construct Functions
 
-export const setDrawerWidth = (width) => {
-  return { type: SETDRAWERW, width }
+export const setCardHolderMinusWidth = (width) => {
+  return { type: SETCARDHOLDERMINUSW, width }
 }
 
 export const openDrawer = () => {
@@ -40,8 +40,11 @@ export const setMenuIndex = (index) => {
 
 // Initial Value
 
+const initialSideNavWidth = 250;
+
 const initialValue = {
-  drawerWidth: 250,
+  sideNavWidth: initialSideNavWidth,
+  cardHolderMinusWidth: initialSideNavWidth,
   categoryDB: ["무기 돌파 재료", "특성 책"],
   drawerOpen: false,
   sidebarOpen: true,
@@ -52,8 +55,8 @@ const initialValue = {
 
 export default function configure(state = initialValue, action) {
   switch (action.type) {
-    case SETDRAWERW:
-      state.drawerWidth = action.width;
+    case SETCARDHOLDERMINUSW:
+      state.cardHolderMinusWidth = action.width;
       break;
     case OPENDRAWER:
       state.drawerOpen = true;
@@ -69,11 +72,6 @@ export default function configure(state = initialValue, action) {
       break;
     case TOGGLESIDEBAR:
       state.sidebarOpen = !state.sidebarOpen;
-      // if (state.sidebarOpen) {
-      //   state.drawerWidth = initialValue.drawerWidth;
-      // } else {
-      //   state.drawerWidth = 0;
-      // } 
       break;
     case SETMENUINDEX:
       state.selMenuIndex = action.index;

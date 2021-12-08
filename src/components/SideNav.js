@@ -19,7 +19,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 
 function SideNav({
   variant,
-  drawerWidth,
+  sideNavWidth,
   drawerOpen,
   sidebarOpen,
   selMenuIndex,
@@ -40,7 +40,7 @@ function SideNav({
         },
         "& .MuiDrawer-paper": {
           boxSizing: "border-box",
-          width: 250
+          width: sideNavWidth
         },
       }}
       PaperProps={{

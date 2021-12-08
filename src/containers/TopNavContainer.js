@@ -7,15 +7,15 @@ import {
   setMenuIndex,
   openSidebar,
   closeSidebar,
-  setDrawerWidth,
+  setCardHolderMinusWidth,
 } from "../reducers/configure";
 
 import TopNav from "../components/TopNav";
 
 export default function TopNavContainer() {
-  const { drawerWidth, drawerOpen, sidebarOpen, selMenuIndex } = useSelector(
+  const { cardHolderMinusWidth, drawerOpen, sidebarOpen, selMenuIndex } = useSelector(
     (state) => ({
-      drawerWidth: state.configure.drawerWidth,
+      cardHolderMinusWidth: state.configure.cardHolderMinusWidth,
       drawerOpen: state.configure.drawerOpen,
       sidebarOpen: state.configure.sidebarOpen,
       selMenuIndex: state.configure.selMenuIndex,
@@ -28,7 +28,7 @@ export default function TopNavContainer() {
 
   return (
     <TopNav
-      drawerWidth={drawerWidth}
+      cardHolderMinusWidth={cardHolderMinusWidth}
       drawerOpen={drawerOpen}
       selMenuIndex={selMenuIndex}
       krDay={krDay}
@@ -41,10 +41,10 @@ export default function TopNavContainer() {
       onSidebarToggle={() => {
         if (!sidebarOpen) {
           dispatch(openSidebar());
-          dispatch(setDrawerWidth(250));
+          dispatch(setCardHolderMinusWidth(250));
         } else {
           dispatch(closeSidebar());
-          dispatch(setDrawerWidth(0));
+          dispatch(setCardHolderMinusWidth(0));
         }
       }}
       onListItemClick={(index) => {

@@ -11,8 +11,8 @@ export default function CardHolderContainer() {
     cardDB: state.cardDB
   }));
 
-  const { drawerWidth, categoryDB } = useSelector((state) => ({
-    drawerWidth: state.configure.drawerWidth,
+  const { cardHolderMinusWidth, categoryDB } = useSelector((state) => ({
+    cardHolderMinusWidth: state.configure.cardHolderMinusWidth,
     categoryDB: state.configure.categoryDB
   }));
 
@@ -28,7 +28,7 @@ export default function CardHolderContainer() {
   return (
     <CardHolder
       cardDB={cardDB}
-      drawerWidth={drawerWidth}
+      cardHolderMinusWidth={cardHolderMinusWidth}
       categoryDB={categoryDB}
       selCategoryList={selCategoryList}
       setSelCategoryList={setSelCategoryList}

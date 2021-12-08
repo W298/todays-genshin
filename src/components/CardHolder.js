@@ -5,7 +5,7 @@ import ItemCardContainer from "../containers/ItemCardContainer";
 
 export default function CardHolder({
   cardDB,
-  drawerWidth,
+  cardHolderMinusWidth,
   categoryDB,
   selCategoryList,
   setSelCategoryList
@@ -13,8 +13,8 @@ export default function CardHolder({
   return (
     <Box
       sx={{
-        width: { sm: `calc(100% - ${drawerWidth}px)` },
-        ml: { sm: `${drawerWidth}px` },
+        width: { sm: `calc(100% - ${cardHolderMinusWidth}px)` },
+        ml: { sm: `${cardHolderMinusWidth}px` },
         transition: "225ms cubic-bezier(0, 0, 0.2, 1) 0ms"
       }}
     >

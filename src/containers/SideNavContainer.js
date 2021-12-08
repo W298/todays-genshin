@@ -5,8 +5,8 @@ import SideNav from "../components/SideNav";
 import { closeDrawer, setMenuIndex, closeSidebar } from "../reducers/configure";
 
 export default function SideNavContainer() {
-  const { drawerWidth, sidebarOpen, selMenuIndex } = useSelector((state) => ({
-    drawerWidth: state.configure.drawerWidth,
+  const { sideNavWidth, sidebarOpen, selMenuIndex } = useSelector((state) => ({
+    sideNavWidth: state.configure.sideNavWidth,
     sidebarOpen: state.configure.sidebarOpen,
     selMenuIndex: state.configure.selMenuIndex,
   }));
@@ -16,7 +16,7 @@ export default function SideNavContainer() {
   return (
     <SideNav
       variant="persistent"
-      drawerWidth={drawerWidth}
+      sideNavWidth={sideNavWidth}
       sidebarOpen={sidebarOpen}
       selMenuIndex={selMenuIndex}
       onSidebarClose={() => {
