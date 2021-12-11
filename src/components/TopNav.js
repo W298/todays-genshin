@@ -32,34 +32,28 @@ function TopNav({
         transition: "225ms cubic-bezier(0, 0, 0.2, 1) 0ms"
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          height: "4rem",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Toolbar sx={{ height: "100%", width: "100%" }}>
+      
+        <Toolbar sx={{ height: "100%", width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <IconButton
             size='large'
             edge='start'
             color='inherit'
             aria-label='menu'
-            sx={{ mr: 1, height: "3rem", width: "3rem", paddingTop: "0.7rem", display: { xs: "block", sm: "none" } }}
+            sx={{ mr: 1, display: { xs: "block", sm: "none" } }}
             onClick={onDrawerOpen}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ marginTop: "0.4rem" }} />
           </IconButton>
           <IconButton
             size='large'
             edge='start'
             color='inherit'
             aria-label='menu'
-            sx={{ mr: 1, height: "3rem", width: "3rem", paddingTop: "0.7rem", display: { xs: "none", sm: "block" } }}
+            sx={{ mr: 1, display: { xs: "none", sm: "block" } }}
             onClick={onSidebarToggle}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ marginTop: "0.45rem" }} />
           </IconButton>
           <Typography
             variant='h6'
@@ -83,14 +77,14 @@ function TopNav({
           >
             홈
           </Typography>
-        </Toolbar>
+        </Box>
         <Chip
           color='secondary'
           icon={<TodayIcon />}
           label={krDay[new Date().getDay()] + "요일"}
-          sx={{ mr: 1, lineHeight: "1rem" }}
+          sx={{ lineHeight: "1rem" }}
         />
-      </Box>
+      </Toolbar>
       <SideNav
         variant='temporary'
         cardHolderMinusWidth={cardHolderMinusWidth}
