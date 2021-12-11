@@ -11,7 +11,7 @@ import {
 
 function ItemCard({ cardObj, categoryDB, onCheckBoxClick }) {
   return (
-    <Card sx={{ mb: 1 }} elevation={4}>
+    <Card sx={{ mb: 1, maxWidth: { sm: "22.5rem" } }} elevation={4}>
       <CardContent>
         <Chip
           label={categoryDB[cardObj.category]}
@@ -35,10 +35,13 @@ function ItemCard({ cardObj, categoryDB, onCheckBoxClick }) {
                   alt={cardObj.subText}
                   src={cardObj.subImage}
                   sx={{
-                    backgroundColor: "background.avatar",
-                    p: 0.5,
-                    width: "1.5rem",
-                    height: "1.5rem"
+                    p: 0.3,
+                    width: "1.75rem",
+                    height: "1.75rem",
+                    backgroundColor: "white",
+                    borderWidth: "2px",
+                    borderColor: "#1976d2",
+                    borderStyle: "solid"
                   }}
                 />
               }
@@ -47,10 +50,13 @@ function ItemCard({ cardObj, categoryDB, onCheckBoxClick }) {
                 alt={cardObj.text}
                 src={cardObj.image}
                 sx={{
-                  backgroundColor: "background.avatar",
-                  p: 0.5,
-                  width: "2.75rem",
-                  height: "2.75rem"
+                  p: 0.3,
+                  width: "3rem",
+                  height: "3rem",
+                  backgroundColor: "white",
+                  borderWidth: "2px",
+                  borderColor: "#1976d2",
+                  borderStyle: "solid"
                 }}
               />
             </Badge>

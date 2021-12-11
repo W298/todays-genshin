@@ -47,6 +47,71 @@ const initialValue = [
     text: "투쟁의 인도",
     subText: "유라",
     done: true
+  },
+  {
+    id: 2,
+    category: 0,
+    image:
+      "https://static.wikia.nocookie.net/gensin-impact/images/3/3d/Item_Sakura_Bloom.png",
+    subImage:
+      "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ayaka.png",
+    text: "벚꽃 수구",
+    subText: "카미사토 아야카",
+    done: false
+  },
+  {
+    id: 3,
+    category: 1,
+    image:
+      "https://static.wikia.nocookie.net/gensin-impact/images/0/0b/Item_Philosophies_of_Resistance.png",
+    subImage:
+      "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Eula.png",
+    text: "투쟁의 인도",
+    subText: "유라",
+    done: true
+  },
+  {
+    id: 4,
+    category: 0,
+    image:
+      "https://static.wikia.nocookie.net/gensin-impact/images/3/3d/Item_Sakura_Bloom.png",
+    subImage:
+      "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ayaka.png",
+    text: "벚꽃 수구",
+    subText: "카미사토 아야카",
+    done: false
+  },
+  {
+    id: 5,
+    category: 1,
+    image:
+      "https://static.wikia.nocookie.net/gensin-impact/images/0/0b/Item_Philosophies_of_Resistance.png",
+    subImage:
+      "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Eula.png",
+    text: "투쟁의 인도",
+    subText: "유라",
+    done: true
+  },{
+    id: 6,
+    category: 0,
+    image:
+      "https://static.wikia.nocookie.net/gensin-impact/images/3/3d/Item_Sakura_Bloom.png",
+    subImage:
+      "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ayaka.png",
+    text: "벚꽃 수구",
+    subText: "카미사토 아야카",
+    done: false
+  },
+  {
+    id: 7,
+    category: 1,
+    image:
+      "https://static.wikia.nocookie.net/gensin-impact/images/0/0b/Item_Philosophies_of_Resistance.png",
+    subImage:
+      "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Eula.png",
+    text: "투쟁의 인도",
+    subText: "유라",
+    done: true
   }
 ];
 

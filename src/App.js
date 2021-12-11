@@ -30,7 +30,7 @@ function App() {
       mode: "light",
       background: {
         default: "rgb(250, 250, 250)",
-        avatar: "rgb(240, 240, 240)"
+        avatar: "rgb(230, 230, 230)"
       },
       secondary: {
         main: blue[800]

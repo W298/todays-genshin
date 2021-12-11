@@ -40,13 +40,13 @@ function TopNav({
           alignItems: "center",
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ height: "100%", width: "100%" }}>
           <IconButton
             size='large'
             edge='start'
             color='inherit'
             aria-label='menu'
-            sx={{ mr: 0.75, display: { xs: "block", sm: "none" } }}
+            sx={{ mr: 1, height: "3rem", width: "3rem", paddingTop: "0.7rem", display: { xs: "block", sm: "none" } }}
             onClick={onDrawerOpen}
           >
             <MenuIcon />
@@ -56,7 +56,7 @@ function TopNav({
             edge='start'
             color='inherit'
             aria-label='menu'
-            sx={{ mr: 0.75, display: { xs: "none", sm: "block" } }}
+            sx={{ mr: 1, height: "3rem", width: "3rem", paddingTop: "0.7rem", display: { xs: "none", sm: "block" } }}
             onClick={onSidebarToggle}
           >
             <MenuIcon />
